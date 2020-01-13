@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+	<title>Document</title>
+	<script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
+	<script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+	<script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+
+</head>
+<body>
+    <div id="app"></div>
+
+
+
+
+
+    <script type="text/babel">
+    
+
+
+        // function App(){
+        //     return(
+
+        //         <div>
+        //             <p>Hello react by Function</p>    
+        //         </div>
+
+        //     )
+        // }
+
+
+        class App extends React.Component{
+            state ={
+                name_component : 'component parent',
+            }
+            render(){
+
+
+                return(
+                    <div>
+                        {this.state.name_component}
+                        <Header  title="Hello Header" />
+                        <Content />
+                        <Footer />   
+                    </div>
+                )
+            }
+        }
+
+
+
+
+        //Header Component
+
+
+            class Header extends React.Component{
+                render(){
+                    return(
+                        <div>
+                            <p>{this.props.title}</p>
+                        </div>
+                    )
+                }
+            }
+
+
+          
+
+        //Content Component
+        class Content extends React.Component{
+                render(){
+                    return(
+                        <div>
+                            <p> Component Content</p>
+                        </div>
+                    )
+                }
+            }  
+
+        //Footer Component
+
+
+        class Footer extends React.Component{
+                render(){
+                    return(
+                        <div>
+                            <p> Component Content</p>
+                        </div>
+                    )
+                }
+            }        
+
+
+
+
+
+
+        ReactDOM.render(<App />, document.getElementById('app'))
+    </script>	
+
+
+</body>
+</html>
