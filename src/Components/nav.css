@@ -1,0 +1,8 @@
+.nav_class_component{max-width: 100%;background: green;padding: 30px;overflow: hidden;}
+.nav_logo{font-size: 18px;font-weight: bold;float: left;}
+.nav_class_component ul{display: inline-block; float: right;}
+.nav_class_component ul li{list-style: none;display: inline-block;margin-right: 20px}
+.nav_class_component ul a{font-size: 16px;color: #fff;font-weight: 500;text-decoration: none;}
+
+.active{background: red}
+.active_link{background: orange}
