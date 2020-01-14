@@ -12,14 +12,38 @@
 
 </head>
 <body>
-    <div id="app"></div>
+
+        <div id="app2"></div>
+        <div id="app3"></div>
+        <div id="app"></div>
 
 
+<!-- babel compiler li kaykhali l borwser ifham code jsx (kaychad dak jsx o kay7awlo l code javascript 3adi)  -->
+<!-- babel  kaywa7awl liya code jsx l React.createElements -->
+
+<!-- Fundtion render : kat9bal 2 paramaetres 1->chno baghi nbayan , 2->fine baghi nbayno -->
 
 
 
     <script type="text/babel">
+
+        const name = "JSX";
+        const ele1 =<p className="test">hello this whats is call {name} <b>{3+6}</b></p>     //hada howa jsx   
+        ReactDOM.render(ele1, document.getElementById('app2'));
+
+        const ele2=React.createElement( //hada howa React.createELemnt   daba babel kaychad liya jsx o kay7awlo liya l React.createElement
+            //createElement Accepet 3 parametres
+            //1=> balise
+            "p",
+            //2 =>attributes
+            {className:"test",id:"test_id"},
+            //3=> Children of element
+           " hello this whats is call "+ name 
+        );
+        ReactDOM.render(ele2, document.getElementById('app3'));
+
     
+        
 
 
         // function App(){
@@ -33,9 +57,12 @@
         // }
 
 
+
+        //[parent component]
         class App extends React.Component{
             state ={
-                name_component : 'component parent',
+                name_component : 'component parent', //State Private ma n9darch ndkhol 3lih mn chi component akhor kandkhol 3lih 
+                //ghir mn component li declarito fiha
             }
             render(){
 
@@ -54,7 +81,7 @@
 
 
 
-        //Header Component
+        //Header Component [Child component]
 
 
             class Header extends React.Component{
@@ -70,7 +97,7 @@
 
           
 
-        //Content Component
+        //Content Component [Child component]
         class Content extends React.Component{
                 render(){
                     return(
@@ -81,7 +108,7 @@
                 }
             }  
 
-        //Footer Component
+        //Footer Component [Child component]
 
 
         class Footer extends React.Component{
@@ -103,5 +130,46 @@
     </script>	
 
 
+
+
+<!--  
+    
+            {PROPS}                !=           {STATE}
+-propos kaykhali tsifat data mn     =    -private kankhdam biha ghir f component li ana mdéclariha fiha 
+component l autre component         =    -state is changeable by setState
+-Props ma kan9darch nbadalha        =    -you can pass the state of current component as prop to other component 
+props abrevietion l propriéte       =
+                                    =
+                                    =
+                                    =
+                                    =
+                                    =
+                                    =
+                                    =
+                                    =
+                                    =
+                                    =
+                                    =
+                                    =
+                                    =
+                                    =
+                                    =
+                                    =
+                                    =
+                                    =
+                                    =
+                                    =
+                                    =
+                                    =
+                                    =
+                                    =
+                                    =
+                                    =
+                                    = 
+-->
+
+
+
 </body>
 </html>
+
