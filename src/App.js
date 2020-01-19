@@ -15,8 +15,39 @@ import own_image from './img_test.jpg';
 class App extends Component {
 	
 
+state = {
+	name : "mehdi",
+	class:""
+}
+
+
+change_state = (evt) =>{
+	this.setState({
+		name : evt.target.value
+	});
+	if (this.state.name.length > 20) {
+		this.setState({
+			class:"input-disable"
+		})
+	}else{
+		this.setState({
+			class:""
+		})
+
+	}
+}
+
+checkvar=()=>{
+	console.log(this);
+}
+
+
+
+
+
+
 	render(){
-		console.log("render");
+		// console.log("render");
 		return(
 			<BrowserRouter>
 			<div className="myApp">
@@ -37,6 +68,11 @@ class App extends Component {
 			 	</table>
 
 			 	<img src={own_image} alt="my own image"/>
+				 <button onClick={this.checkvar}>click here</button>
+					<h1>{this.state.name} {this.state.name.length}</h1>
+				 <input value={this.state.name} onChange={this.change_state} id="input_id" className={this.state.class}/>
+
+				 {this.props.value}
 			</div>
 			</BrowserRouter>
 		)
