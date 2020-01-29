@@ -3,51 +3,71 @@ import "./Item.css";
 
 class Items extends Component{
 
+
+	state = {
+		firstname : ""
+	}
+
+
+
+	submitEvent = (e) =>{
+		e.preventDefault();
+
+		console.log("e", e.target);
+		console.log("e", e.target.getElementsByClassName("myclass5")[0].size);
+		e.target.getElementsByClassName("myclass5")[0].size = 66;
+		console.log("ee2", e.target.getElementsByClassName("myclass5")[0].size);
+		// this.setState({
+		// 	firstname : e.myclass1.target.value;
+		// })
+
+	}
+
 		
 
 	render(){
 
-			const {data_valeu_props} = this.props;
-			const view_users = data_valeu_props.map((view_item)=>{
+		const {elements} = this.props;
 
-
-				return view_item.count>0 ?
-
-				(
-
-					<div className="item_class" key={view_item.id}>
-						<p className="id_user">id <b>est :</b> {view_item.id}</p>
-						<p className="name_user">Nom <b>est :</b> {view_item.name}</p>
-						<p className="age_user">Age <b>est :</b> {view_item.age}</p>
-						<p className="count_user">Count <b>est :</b> {view_item.count}</p>
-						<hr/>
-					</div>
-
-
-				)
-
-
-
-				 : null
-
-
-
-
-
-
-
-
-			})
-			return (
-				<div className="myItemClass">
-					<h1>Hello bo9al ana f componenet item</h1>
-					{/*{console.log(data_valeu_props)}*/}
-					{view_users}
+		const displayitems = elements.map(item =>{
+			return(
+				<div key={item.id}>
+					<p><b>ID : </b>{item.id}</p>
+					<p><b>name : </b>{item.name}</p>
+					<hr></hr>
 				</div>
-
 			)
+		})
 
-			
+
+
+		
+
+		// const {id,name}=this.props;  
+		 //f had lkitaba kangol lih jib liya id mn props o 7atha f1 variable smito id o jib liya name mn this.props o 7atha liya f 1 variable smito name
+
+
+		return (
+			<div className="myItemClass">
+				<h1>Hello bo9al ana f componenet item</h1>		
+				{/* <h2>{id}</h2>
+				<h3>{name}</h3> */}
+
+				{displayitems}
+				<h1>Start Form</h1>
+				<form onSubmit={this.submitEvent}>
+					<input type='text' className="myclass1" />
+					<input type='text' className="myclass2" />
+					<input type='text' className="myclass3" />
+					<input type='text' className="myclass4" />
+					<input type='text' className="myclass5" />
+					<input type="submit" value="envoyer"  />
+				</form>
+
+				{this.state.firstname}
+			</div>
+		)
+
 		
 	}
 
